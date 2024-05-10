@@ -1,0 +1,11 @@
+member(X,[X|_]). 
+member(X,[Y|L]):- member(X,L). 
+
+?- [memb].
+true.
+
+?- memb(e, [b,c,d,a]). 
+false.
+      
+?- memb(d, [b,c,d,a]).
+true.
