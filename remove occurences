@@ -1,0 +1,10 @@
+remove_all(_,[],[]).
+remove_all(X,[X|REST],RESULT) :-
+	remove_all(X,REST,RESULT),
+	!.
+remove_all(X,[FIRST|REST],[FIRST|RESULT]) :-
+	X \=FIRST ,
+	remove_all(X,REST,RESULT).
+
+remove_all(10,[10,10,20,20,30,40,50],R).
+
