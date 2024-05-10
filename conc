@@ -1,0 +1,11 @@
+conc([], L, L).
+conc([X | L1], L2, [X | L3]):-
+  conc(L1, L2, L3).
+
+/* OUTPUT
+
+?- conc([a, b, c], [1, 2, 3], L).
+L = [a, b, c, 1, 2, 3].
+
+?- conc([a, [b, c], d], [a, [], b], L). 
+L = [a, [b, c], d, a, [], b]
